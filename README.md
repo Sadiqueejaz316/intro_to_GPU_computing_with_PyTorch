@@ -3,7 +3,7 @@
 ## 📌 Overview
 This project demonstrates practical implementation of **GPGPU (General-Purpose GPU Computing)** using **PyTorch** and **Triton**. It focuses on accelerating numerical computations, optimizing performance, and developing custom GPU kernels.
 
-The project is designed as a **modular Python codebase (no notebooks)** to simulate real-world development workflows.
+The project is designed as a **modular Python codebase (no notebooks)** to simulate real-world development workflows. *(Note: Jupyter notebooks are still available in the `notebooks/` directory for historical reference, but all functional examples are being migrated to `src/`.)*
 
 ---
 
@@ -55,53 +55,38 @@ The project is designed as a **modular Python codebase (no notebooks)** to simul
 
 ## 📁 Project Structure
 
-```bash
+```text
 .
-├── src/
-│   ├── core/
-│   │   ├── tensor_ops.py
-│   │   ├── linear_algebra.py
-│   │   └── gpu_utils.py
-│   │
-│   ├── profiling/
-│   │   ├── profiler.py
-│   │   └── benchmarks.py
-│   │
-│   ├── kernels/
-│   │   ├── triton_kernels.py
-│   │   └── custom_ops.py
-│   │
-│   └── main.py
-│
-├── tests/
-│   ├── test_tensor_ops.py
-│   ├── test_kernels.py
-│
-├── results/
-│   └── logs/
-│
-├── requirements.txt
-├── setup.py
+├── notebooks/                     # Original instructional Jupyter notebooks
+├── src/                           # Refactored standalone Python scripts
+│   ├── gpu_helpers.py             # Reusable GPU profiling and memory utilities
+│   ├── part_1_introduction_to_pytorch.py
+│   ├── part_2_linear_regression_and_pca.py
+│   ├── regression_viz.py          # Visualization routines
+│   └── tensor_viz.py              # Tensor visualization utilities
+├── requirements.txt               # Dependencies
 └── README.md
+```
 
-## Structure
+---
 
-* `notebooks/`: Contains interactive Jupyter notebooks covering lessons and exercises.
-* `src/`: Python source code containing helper functions and visualization utilities.
-* `requirements.txt`: Project dependencies.
-
-## Setup
+## 🚀 Setup & Execution
 
 To set up the project locally:
 
-1. Create a virtual environment:
+1. **Create a virtual environment:**
    ```bash
    python -m venv venv
    ```
-2. Activate the virtual environment:
-   - On Windows: `venv\Scripts\activate`
-   - On MacOS/Linux: `source venv/bin/activate`
-3. Install dependencies:
+2. **Activate the virtual environment:**
+   - **Windows:** `venv\Scripts\activate`
+   - **MacOS/Linux:** `source venv/bin/activate`
+3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
+   ```
+4. **Run scripts:**
+   ```bash
+   python src/part_1_introduction_to_pytorch.py
+   python src/part_2_linear_regression_and_pca.py
    ```
